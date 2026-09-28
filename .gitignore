@@ -40,3 +40,15 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
+# Report / FYP-only files
+report_assets/
+
+# Local launch scripts
+run_website.ps1
+run_website.bat
+
+# Large binary assets
+assets/soundfonts/*.sf2
+
+# Duplicate/generated UI image
+web/frontend/assets/img/muse_chat.jpg
