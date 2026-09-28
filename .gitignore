@@ -52,3 +52,8 @@ assets/soundfonts/*.sf2
 
 # Duplicate/generated UI image
 web/frontend/assets/img/muse_chat.jpg
+
+# Local report/checking files
+FYP2_Report_Checklist_Text_Muse.png
+fyp2_repaired.docx
+repair_report.py
