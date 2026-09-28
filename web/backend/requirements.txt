@@ -1,0 +1,11 @@
+flask
+flask-cors
+firebase-admin
+groq
+torch
+numpy
+scipy
+mido
+miditok
+symusic
+pyfluidsynth

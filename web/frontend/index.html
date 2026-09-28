@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Muse | Chatbot and Music Generation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/piano-roll.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.8.49/build/Tone.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tonejs/midi@2.0.28/build/Midi.js"></script>
+</head>
+<body>
+  <header class="site-navbar">
+    <a class="site-brand" href="index.html">TEXT MUSE</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-nav-link active" href="index.html">Generate</a>
+      <a class="site-nav-link" href="history.html">History</a>
+      <a class="site-nav-link" href="conversations.html">Conversations</a>
+      <span class="site-user-email hidden" id="site-user-email"></span>
+      <a class="site-nav-button" id="site-login-link" href="login.html">Login</a>
+      <button class="site-nav-button hidden" id="site-logout-button" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="section-kicker">Final Year Project</p>
+        <h1>Text Muse</h1>
+        <p class="header-copy">
+          Chat with the assistant, refine the mood and instruments, then generate a MIDI output.
+        </p>
+      </div>
+    </header>
+
+    <section class="workspace-grid">
+      <section class="assistant-panel card">
+        <div class="card-head">
+          <div class="avatar-badge">✦</div>
+          <div>
+            <p class="section-kicker">AI Chatbot</p>
+            <h2>Describe the music you want</h2>
+          </div>
+        </div>
+
+        <div class="chat-window" id="chat-window">
+          <article class="message bot">
+            <p>
+              Hi! I am your music assistant. Choose an emotion and describe the style or instruments you want,
+              and I will help prepare the generation prompt.
+            </p>
+            <span class="time-stamp">Ready to compose</span>
+          </article>
+        </div>
+
+        <div class="prompt-groups">
+          <div>
+            <p class="group-title">Emotion</p>
+            <div class="chip-row" id="emotion-chips">
+              <button class="chip" type="button">happy</button>
+              <button class="chip" type="button">sad</button>
+              <button class="chip" type="button">energetic</button>
+              <button class="chip" type="button">relaxed</button>
+              <button class="chip" type="button">angry</button>
+              <button class="chip" type="button">melancholic</button>
+              <button class="chip" type="button">romantic</button>
+              <button class="chip" type="button">anxious</button>
+              <button class="chip" type="button">hopeful</button>
+              <button class="chip" type="button">lonely</button>
+            </div>
+          </div>
+        </div>
+
+        <form class="composer-form" id="music-form">
+          <input
+            id="message-input"
+            name="message"
+            type="text"
+            placeholder="Type your message..."
+            autocomplete="off"
+          />
+          <button id="send-button" type="submit" aria-label="Send prompt">➜</button>
+        </form>
+
+        <p class="status-line" id="status" aria-live="polite">
+          Chat with the assistant first, then generate music when you are ready.
+        </p>
+      </section>
+
+      <section class="player-card card">
+        <div class="player-icon">♪</div>
+        <p class="section-kicker">Music Generation</p>
+        <h2 id="track-title">No Track Generated Yet</h2>
+        <p id="track-description">
+          Use the chatbot to describe your track and emotion, then generate a MIDI result.
+        </p>
+
+        <div class="player-widget hidden" id="player-widget">
+          <button class="player-toggle" id="player-toggle" type="button">Play Preview</button>
+          <p class="player-caption" id="player-caption">The generated MIDI is ready for playback.</p>
+          <audio id="audio-player" class="hidden" controls preload="metadata"></audio>
+        </div>
+
+        <div class="result-meta" id="result-meta">
+          <div>
+            <span>Tokens</span>
+            <strong>-</strong>
+          </div>
+          <div>
+            <span>Created</span>
+            <strong>-</strong>
+          </div>
+        </div>
+
+        <p class="latest-run" id="sidebar-status">No track generated yet.</p>
+
+        <div class="player-actions">
+          <button class="generate-button" id="generate-button" type="button">
+            Generate Music
+          </button>
+          <a class="download-button hidden" id="download-link" href="#">Download MIDI</a>
+        </div>
+      </section>
+    </section>
+
+    <section class="piano-roll-panel card hidden" id="piano-roll-panel" aria-label="MIDI piano roll preview">
+      <div class="piano-roll-head">
+        <div>
+          <p class="section-kicker">MIDI Piano Roll</p>
+          <h3>Note Flow Preview</h3>
+        </div>
+        <p id="piano-roll-summary">Waiting for generated MIDI.</p>
+      </div>
+      <div class="instrument-legend" id="instrument-legend"></div>
+      <div class="piano-roll-viewport" id="piano-roll-viewport">
+        <div class="piano-roll-grid" id="piano-roll-grid"></div>
+        <div class="piano-roll-playhead" id="piano-roll-playhead"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="assets/js/session.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#222"/>
+    </marker>
+    <marker id="arrow-light" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+    <style>
+      .outer { fill: #fff; stroke: #222; stroke-width: 2; }
+      .box { fill: #fff; stroke: #222; stroke-width: 1.8; rx: 10; ry: 10; }
+      .small { font: 16px Arial, sans-serif; fill: #111; }
+      .medium { font: 18px Arial, sans-serif; fill: #111; }
+      .caption { font: 20px "Times New Roman", serif; fill: #111; }
+      .caption-bold { font: bold 20px "Times New Roman", serif; fill: #111; }
+      .label { font: 15px Arial, sans-serif; fill: #111; }
+      .arrow { stroke: #222; stroke-width: 2; fill: none; marker-end: url(#arrow); marker-start: url(#arrow); }
+      .oneway { stroke: #222; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #555; stroke-width: 1.8; stroke-dasharray: 6 5; fill: none; marker-end: url(#arrow-light); }
+    </style>
+  </defs>
+
+  <!-- Users -->
+  <g transform="translate(185 28)">
+    <circle cx="30" cy="24" r="17" fill="#fff" stroke="#222" stroke-width="2"/>
+    <path d="M15 56 C16 34 44 34 45 56 L45 83 L15 83 Z" fill="#fff" stroke="#222" stroke-width="2"/>
+    <text x="30" y="112" text-anchor="middle" class="label">User</text>
+  </g>
+  <g transform="translate(415 28)">
+    <circle cx="30" cy="24" r="17" fill="#fff" stroke="#222" stroke-width="2"/>
+    <path d="M15 56 C16 34 44 34 45 56 L45 83 L15 83 Z" fill="#fff" stroke="#222" stroke-width="2"/>
+    <text x="30" y="112" text-anchor="middle" class="label">Student User</text>
+  </g>
+  <g transform="translate(645 28)">
+    <circle cx="30" cy="24" r="17" fill="#fff" stroke="#222" stroke-width="2"/>
+    <path d="M15 56 C16 34 44 34 45 56 L45 83 L15 83 Z" fill="#fff" stroke="#222" stroke-width="2"/>
+    <text x="30" y="112" text-anchor="middle" class="label">Admin / Tester</text>
+  </g>
+
+  <path d="M215 155 L215 230" class="arrow"/>
+  <path d="M445 155 L445 230" class="arrow"/>
+  <path d="M675 155 L675 230" class="arrow"/>
+
+  <!-- Frontend layer -->
+  <rect x="70" y="215" width="760" height="210" class="outer"/>
+  <rect x="105" y="245" width="690" height="58" class="box"/>
+  <text x="450" y="281" text-anchor="middle" class="medium">Text Muse Web Interface</text>
+
+  <rect x="105" y="335" width="180" height="62" class="box"/>
+  <text x="195" y="360" text-anchor="middle" class="small">Login / Register</text>
+  <text x="195" y="381" text-anchor="middle" class="small">Password Reset</text>
+
+  <rect x="360" y="335" width="180" height="62" class="box"/>
+  <text x="450" y="360" text-anchor="middle" class="small">Chat Prompt</text>
+  <text x="450" y="381" text-anchor="middle" class="small">Music Request</text>
+
+  <rect x="615" y="335" width="180" height="62" class="box"/>
+  <text x="705" y="360" text-anchor="middle" class="small">Playback / Download</text>
+  <text x="705" y="381" text-anchor="middle" class="small">History Page</text>
+
+  <path d="M195 305 L195 330" class="arrow"/>
+  <path d="M450 305 L450 330" class="arrow"/>
+  <path d="M705 305 L705 330" class="arrow"/>
+
+  <!-- Backend layer -->
+  <rect x="70" y="485" width="760" height="240" class="outer"/>
+  <rect x="105" y="535" width="180" height="75" class="box"/>
+  <text x="195" y="563" text-anchor="middle" class="small">Authentication</text>
+  <text x="195" y="584" text-anchor="middle" class="small">Service</text>
+
+  <rect x="360" y="535" width="180" height="75" class="box"/>
+  <text x="450" y="563" text-anchor="middle" class="small">Flask Backend</text>
+  <text x="450" y="584" text-anchor="middle" class="small">API Controller</text>
+
+  <rect x="615" y="535" width="180" height="75" class="box"/>
+  <text x="705" y="563" text-anchor="middle" class="small">History</text>
+  <text x="705" y="584" text-anchor="middle" class="small">Service</text>
+
+  <rect x="232" y="640" width="180" height="55" class="box"/>
+  <text x="322" y="663" text-anchor="middle" class="small">Emotion Detection</text>
+  <text x="322" y="684" text-anchor="middle" class="small">Module</text>
+
+  <rect x="488" y="640" width="180" height="55" class="box"/>
+  <text x="578" y="663" text-anchor="middle" class="small">Music Mapping</text>
+  <text x="578" y="684" text-anchor="middle" class="small">Module</text>
+
+  <path d="M450 425 L450 530" class="arrow"/>
+  <path d="M285 572 L355 572" class="arrow"/>
+  <path d="M540 572 L610 572" class="arrow"/>
+  <path d="M450 610 L350 638" class="oneway"/>
+  <path d="M412 668 L486 668" class="oneway"/>
+
+  <!-- Data and model layer -->
+  <rect x="70" y="785" width="760" height="205" class="outer"/>
+
+  <ellipse cx="205" cy="865" rx="140" ry="42" fill="#fff" stroke="#222" stroke-width="2"/>
+  <path d="M65 865 L65 922 C65 945 345 945 345 922 L345 865" fill="none" stroke="#222" stroke-width="2"/>
+  <text x="205" y="858" text-anchor="middle" class="small">Firebase Firestore</text>
+  <text x="205" y="880" text-anchor="middle" class="small">User Generation History</text>
+  <text x="205" y="902" text-anchor="middle" class="small">Prompt / Emotion / Files</text>
+
+  <rect x="390" y="825" width="180" height="80" class="box"/>
+  <text x="480" y="854" text-anchor="middle" class="small">Music Generation</text>
+  <text x="480" y="875" text-anchor="middle" class="small">Baseline MIDI</text>
+  <text x="480" y="896" text-anchor="middle" class="small">Optional MIDI-GPT</text>
+
+  <rect x="620" y="825" width="180" height="80" class="box"/>
+  <text x="710" y="854" text-anchor="middle" class="small">Generated Output</text>
+  <text x="710" y="875" text-anchor="middle" class="small">MIDI File</text>
+  <text x="710" y="896" text-anchor="middle" class="small">WAV Preview</text>
+
+  <path d="M578 695 L480 820" class="arrow"/>
+  <path d="M570 865 L615 865" class="oneway"/>
+  <path d="M705 610 L705 820" class="dash"/>
+  <path d="M345 885 L386 885" class="arrow"/>
+  <path d="M195 610 L195 820" class="dash"/>
+
+  <text x="275" y="805" class="label">generation record</text>
+  <text x="610" y="765" class="label">music files</text>
+  <text x="500" y="930" class="label">emotion parameters</text>
+
+  <!-- Caption -->
+  <text x="310" y="1050" class="caption-bold">Figure 4.1</text>
+  <text x="412" y="1050" class="caption">System Architecture Diagram.</text>
+</svg>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Muse | Login</title>
+
+  <!--Font style reference-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!--CSS style reference-->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="auth-navbar">
+    <a class="auth-brand" href="login.html">TEXT MUSE</a>
+    <button id="auth-nav-button" class="auth-nav-button" type="button">Sign Up</button>
+  </header>
+
+  <main class="auth-page">
+    <div class="auth-overlay"></div>
+
+    <section class="auth-popup" aria-label="Login and register form">
+      <div class="auth-side">
+        <h1>Welcome Back</h1>
+        <p>
+          Please log in that can save the information to stay connected with us.
+        </p>
+      </div>
+
+      <div class="auth-form-wrap">
+        <section class="auth-form-panel auth-login-panel">
+          <h2>Login</h2>
+          <p class="auth-form-copy">Use your account to continue composing with Text Muse.</p>
+          
+          <form action="#" id="loginForm" novalidate>
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <p id="login-email-error" class="field-error"></p>
+
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+            <p id="login-password-error" class="field-error"></p>
+            
+            <a href="#" class="forgot-pass">Forgot password?</a>
+            <button id="login-button" class="auth-primary-button" type="button">Log In</button>
+            <p id="auth-status" class="status"></p>
+          </form>
+
+          <p class="bottom-link">
+            Do not have an account?
+            <button id="show-register-button" type="button">Sign up</button>
+          </p>
+        </section>
+
+        <section class="auth-form-panel auth-register-panel">
+          <h2>Sign Up</h2>
+          <p class="auth-form-copy">To become a part of our community, please sign up.</p>
+
+          <form action="#" id="registerForm" novalidate>
+            <label for="register-username">Username</label>
+            <input id="register-username" type="text" autocomplete="username" placeholder="Your display name" required>
+            <p id="register-username-error" class="field-error"></p>
+
+            <label for="register-email">Email</label>
+            <input id="register-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <p id="register-email-error" class="field-error"></p>
+
+            <label for="register-password">Password</label>
+            <input id="register-password" type="password" autocomplete="new-password" placeholder="Minimum 6 characters" required>
+            <p id="register-password-error" class="field-error"></p>
+
+            <label class="policy-row" for="policy">
+              <input id="policy" type="checkbox" />
+              <span>I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms & Conditions</a></span>
+            </label>
+
+            <button id="register-button" class="auth-primary-button" type="button">Sign Up</button>
+            <div id="register-status" class="status"></div>
+            <div id="signupMessage" class="text-success mb-2" style="display:none;"></div>
+            <div id="signupError" class="text-danger mb-2" style="display:none"></div>
+          </form>
+
+          <p class="bottom-link">
+            Already have an account?
+            <button id="show-login-button" type="button">Login</button>
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/firebase-config.js"></script>
+  <script type="module" src="assets/js/auth.js"></script>
+</body>
+</html>

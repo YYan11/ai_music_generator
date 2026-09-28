@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Muse | Conversations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-navbar">
+    <a class="site-brand" href="index.html">TEXT MUSE</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="site-nav-link" href="index.html">Generate</a>
+      <a class="site-nav-link" href="history.html">History</a>
+      <a class="site-nav-link active" href="conversations.html">Conversations</a>
+      <span class="site-user-email hidden" id="site-user-email"></span>
+      <a class="site-nav-button" id="site-login-link" href="login.html">Login</a>
+      <button class="site-nav-button hidden" id="site-logout-button" type="button">Logout</button>
+    </nav>
+  </header>
+
+  <main class="app-shell page-shell">
+    <header class="app-header">
+      <p class="section-kicker">Conversation Memory</p>
+      <h1>Previous Conversations</h1>
+      <p class="header-copy">Review past chatbot prompts and reuse a previous idea for a new generation.</p>
+    </header>
+
+    <section class="library-card card" id="chat-history-section">
+      <div class="library-head">
+        <div>
+          <p class="section-kicker">Saved Chats</p>
+          <h2>Chat History</h2>
+        </div>
+        <button class="library-refresh" id="conversation-refresh" type="button">Refresh</button>
+      </div>
+      <div class="library-list" id="conversation-list">
+        <p class="library-empty">Loading saved conversations...</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/session.js"></script>
+  <script type="module" src="assets/js/history-pages.js?v=2"></script>
+</body>
+</html>
