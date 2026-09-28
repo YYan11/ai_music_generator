@@ -27,3 +27,33 @@ src/                 Core music generation and emotion-control logic
 web/backend/         Flask backend API
 web/frontend/        Frontend website files
 colab/               Dataset preprocessing notebook and script
+
+## Setup and Run
+
+1. Install the required Python libraries:
+
+```bash
+pip install -r web/backend/requirements.txt
+```
+
+2. Create a `.env` file using `.env.example` as a reference.
+
+Example:
+
+```ini
+CHAT_PROVIDER=groq
+GROQ_API_KEY=your_api_key_here
+GROQ_MODEL=llama-3.3-70b-versatile
+```
+
+3. Run the backend server:
+
+```bash
+python web/backend/app.py
+```
+
+4. Open the website in your browser:
+
+```text
+http://127.0.0.1:8000
+```
